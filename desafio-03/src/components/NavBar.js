@@ -1,5 +1,6 @@
 import logopanaderia from "./imagenes/logo.png";
 import "./NavBar.scss";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return (
@@ -63,6 +64,7 @@ function NavBar() {
                     Cursos
                   </a>
                 </li>
+                <CartWidget />
               </ul>
             </div>
           </nav>
