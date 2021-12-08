@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProductoById } from "./utils/get-productos";
+import { getProductById } from "./utils/productos";
 import { useParams } from "react-router";
 import ItemDetail from "./ItemDetail";
 import Loading from "./loading";
@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     if (idItem) {
-      getProductoById(idItem)
+      getProductById(idItem)
         .then((result) => setProduct(result))
         .catch((err) => alert(err));
     }

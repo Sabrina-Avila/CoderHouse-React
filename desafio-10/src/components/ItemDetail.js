@@ -1,23 +1,23 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "./CartContext";
+import { CartContext } from "./Cart";
 import ItemCount from "./ItemCount";
 
 function ItemDetail({ id, pictureUrl, title, descripcion, stock, price }) {
   const [itemCount, setItemCount] = useState(0);
-  const test = useContext(CartContext);
+  const { add } = useContext(CartContext);
 
-  const onAgregarClick = (cantidad) => {
-    alert(`Se agregado ${cantidad} producto al carrito`);
-    setItemCount(cantidad);
-    test.addToCart({ id, pictureUrl, title, price }, cantidad);
+  const onAgregarClick = (quantity) => {
+    console.log(`Se agregado ${quantity} producto al carrito`);
+    setItemCount(quantity);
+    add({ id, pictureUrl, title, price }, quantity);
   };
 
   return (
     <div className="d-flex justify-content-center text-center bg-gradient-secondary">
       <div>
         <div>
-          <img src={pictureUrl} alt="Producto" />
+          <img src={pictureUrl} alt={title} />
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{descripcion}</p>

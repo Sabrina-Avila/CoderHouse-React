@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logopanaderia from "./imagenes/logo.png";
-import CartWidget from "./CartWidget";
+import { CartWidget } from "./Cart";
 import "./NavBar.scss";
 
 function NavBar() {

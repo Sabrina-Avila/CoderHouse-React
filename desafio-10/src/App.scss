@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+i.bi-margin {
+  margin-right: .5rem;
+}
+
+button .spinner-border {
+  border: .2rem solid currentColor;
+  height: 1rem;
+  width: 1rem;
+  margin-right: .5rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

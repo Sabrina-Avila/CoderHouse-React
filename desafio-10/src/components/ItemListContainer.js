@@ -2,15 +2,15 @@ import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import "./product.scss";
 import { useParams } from "react-router";
-import { firestoreFetch } from "./utils/firestoreFetch";
+import { getProducts } from "./utils/productos";
 
 function ItemListContainer() {
   const { idCategory } = useParams();
   const [productos, setProductos] = useState();
 
   useEffect(() => {
-    firestoreFetch(idCategory)
-      .then((r) => setProductos(r))
+    getProducts(idCategory)
+      .then((response) => setProductos(response))
       .catch((err) => console.log(err));
   }, [idCategory]);
 
